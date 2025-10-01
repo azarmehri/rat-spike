@@ -1,0 +1,67 @@
+# MATLAB files
+*.asv
+*.m~
+*.mex*
+*.mat
+*.fig
+*.p
+*.slx.autosave
+*.slxc
+*.mdl.autosave
+*.mdlp
+
+# MATLAB App Designer files
+*.mlapp.autosave
+
+# MATLAB Code Generation
+codegen/
+slprj/
+sccprj/
+
+# MATLAB temporary files
+*.tmp
+
+# MATLAB Simulink files
+*.slx.original
+*.mdl.original
+
+# MATLAB R2019b and later
+*.mlappinstall
+*.mltbx
+
+# MATLAB Central File Exchange
+*.zip
+
+# MATLAB Compiler
+*.prj
+
+# MATLAB Coder
+*_mex.mexw32
+*_mex.mexw64
+*_mex.mexa64
+*_mex.mexmaci64
+
+# MATLAB App packaging
+*.mlappinstall
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# Temporary directories
+temp/
+tmp/

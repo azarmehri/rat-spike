@@ -15,22 +15,22 @@ classdef RatSpike_exported < matlab.apps.AppBase
 
         % Callback function: BaseToggleTool
         function BaseToggleToolClicked(app, event)
-            
+            RatSpike.BaseToggleToolClicked(app, event);
         end
 
         % Callback function: StimToggleTool
         function StimToggleToolClicked(app, event)
-            
+            RatSpike.StimToggleToolClicked(app, event);
         end
 
         % Callback function: ChartToggleTool
         function ChartToggleToolClicked(app, event)
-            
+            RatSpike.ChartToggleToolClicked(app, event);
         end
 
         % Callback function: OpenBasePushTool
         function OpenBasePushToolClicked(app, event)
-            
+            RatSpike.OpenBasePushToolClicked(app, event);
         end
     end
 
