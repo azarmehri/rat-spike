@@ -17,6 +17,21 @@ classdef RatSpike_exported < matlab.apps.AppBase
         function BaseToggleToolClicked(app, event)
             
         end
+
+        % Callback function: StimToggleTool
+        function StimToggleToolClicked(app, event)
+            
+        end
+
+        % Callback function: ChartToggleTool
+        function ChartToggleToolClicked(app, event)
+            
+        end
+
+        % Callback function: OpenBasePushTool
+        function OpenBasePushToolClicked(app, event)
+            
+        end
     end
 
     % Component initialization
@@ -46,17 +61,20 @@ classdef RatSpike_exported < matlab.apps.AppBase
             app.OpenBasePushTool = uipushtool(app.Toolbar);
             app.OpenBasePushTool.Visible = 'off';
             app.OpenBasePushTool.Tooltip = {'Open Base File'};
+            app.OpenBasePushTool.ClickedCallback = createCallbackFcn(app, @OpenBasePushToolClicked, true);
             app.OpenBasePushTool.Icon = fullfile(pathToMLAPP, 'icons', 'folder-open.svg');
 
             % Create StimToggleTool
             app.StimToggleTool = uitoggletool(app.Toolbar);
             app.StimToggleTool.Tooltip = {'Stim Record'};
+            app.StimToggleTool.ClickedCallback = createCallbackFcn(app, @StimToggleToolClicked, true);
             app.StimToggleTool.Icon = fullfile(pathToMLAPP, 'icons', 'activity.svg');
             app.StimToggleTool.Separator = 'on';
 
             % Create ChartToggleTool
             app.ChartToggleTool = uitoggletool(app.Toolbar);
             app.ChartToggleTool.Tooltip = {'Chart'};
+            app.ChartToggleTool.ClickedCallback = createCallbackFcn(app, @ChartToggleToolClicked, true);
             app.ChartToggleTool.Icon = fullfile(pathToMLAPP, 'icons', 'chart-spline.svg');
             app.ChartToggleTool.Separator = 'on';
 
