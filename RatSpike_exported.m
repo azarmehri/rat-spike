@@ -8,7 +8,16 @@ classdef RatSpike_exported < matlab.apps.AppBase
         OpenBasePushTool  matlab.ui.container.toolbar.PushTool
         StimToggleTool    matlab.ui.container.toolbar.ToggleTool
         ChartToggleTool   matlab.ui.container.toolbar.ToggleTool
+        GridLayout        matlab.ui.container.GridLayout
+        UIAxes            matlab.ui.control.UIAxes
     end
+
+    
+    properties (Access = public)
+        Fs (1,1) double
+        BaseFilteredData (:,:) double
+    end
+    
 
     % Callbacks that handle component events
     methods (Access = private)
@@ -77,6 +86,20 @@ classdef RatSpike_exported < matlab.apps.AppBase
             app.ChartToggleTool.ClickedCallback = createCallbackFcn(app, @ChartToggleToolClicked, true);
             app.ChartToggleTool.Icon = fullfile(pathToMLAPP, 'icons', 'chart-spline.svg');
             app.ChartToggleTool.Separator = 'on';
+
+            % Create GridLayout
+            app.GridLayout = uigridlayout(app.UIFigure);
+            app.GridLayout.ColumnWidth = {'1x'};
+            app.GridLayout.RowHeight = {'1x'};
+
+            % Create UIAxes
+            app.UIAxes = uiaxes(app.GridLayout);
+            title(app.UIAxes, 'Title')
+            xlabel(app.UIAxes, 'X')
+            ylabel(app.UIAxes, 'Y')
+            zlabel(app.UIAxes, 'Z')
+            app.UIAxes.Layout.Row = 1;
+            app.UIAxes.Layout.Column = 1;
 
             % Show the figure after all components are created
             app.UIFigure.Visible = 'on';
